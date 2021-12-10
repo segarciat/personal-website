@@ -1,0 +1,129 @@
+@import 'vars';
+@import 'utils';
+
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+/* Base styles */
+body {
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $primary;
+  color: $light;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/* Navigation bar */
+.navbar {
+  .container {
+    header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1.25rem;
+      transform: translateX(0);
+      transition: transform ease-in-out 0.2s;
+
+      .nav-brand {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        line-height: 1rem;
+
+        a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      &.hide {
+        transform: translateX(70%);
+      }
+
+      .nav-toggler {
+        height: 3rem;
+        width: 3rem;
+        padding: 0.5rem;
+        border: rgba(255, 255, 255, 0.2) solid 1px;
+        border-radius: 50%;
+        color: #777;
+      }
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 70vw;
+      display: flex;
+      flex-direction: column;
+      background-color: $dark;
+      transform: translateX(-100%);
+      transition: transform ease-in-out 0.2s;
+      box-shadow: 2px 0px 5px #222;
+      &.show {
+        transform: translateX(0);
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 1rem 0 1rem 1.5rem;
+        &.active {
+          background-color: darken($dark, 3%);
+        }
+        i {
+          margin-right: 0.5rem;
+          font-size: 1.5rem;
+        }
+      }
+      .social {
+        display: flex;
+        justify-content: space-around;
+        bottom: 0;
+        right: 0;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+main#content {
+  display: flex;
+  justify-content: center;
+  transform: translateX(0);
+  transition: transform ease-in-out 0.2s;
+  opacity: 1;
+  &.hide {
+    transform: translateX(70%);
+    opacity: 0.8;
+  }
+}
+
+@import './Home';

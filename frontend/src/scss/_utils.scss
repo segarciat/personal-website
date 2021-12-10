@@ -1,0 +1,30 @@
+@import 'vars';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+%btn-shared {
+  cursor: pointer;
+  background: inherit;
+  color: inherit;
+  border: none;
+}
+
+.btn {
+  @extend %btn-shared;
+
+  &-primary {
+    background: $primary;
+  }
+
+  &-dark {
+    background: $dark;
+    color: #fff;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
