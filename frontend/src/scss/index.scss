@@ -89,12 +89,22 @@ li {
       box-shadow: 2px 0px 5px #222;
       &.show {
         transform: translateX(0);
+
+        a {
+          transform: translateX(0);
+        }
+        .social {
+          transform: scale(1);
+        }
       }
 
       a {
         display: flex;
         align-items: center;
         padding: 1rem 0 1rem 1.5rem;
+        transform: translateX(-100%);
+        transition: transform ease-in-out 0.2s 0.2s;
+
         &.active {
           background-color: darken($dark, 3%);
         }
@@ -109,6 +119,8 @@ li {
         bottom: 0;
         right: 0;
         margin-right: 0.5rem;
+        transform: scale(0);
+        transition: transform ease-in-out 0.3s 0.5s;
       }
     }
   }
