@@ -1,12 +1,14 @@
 import React from 'react';
 
-const NavHeader = ({ isMenuShown, onTogglerClick }) => {
+const NavHeader = ({ isNavMenuShown, onTogglerClick }) => {
   return (
-    <header>
+    <header className={isNavMenuShown ? 'hide' : undefined}>
       <button className="btn nav-toggler" onClick={onTogglerClick}>
         <span>
           <i
-            className={isMenuShown ? 'fas fa-times fa-2x' : 'fas fa-bars fa-2x'}
+            className={
+              isNavMenuShown ? 'fas fa-times fa-2x' : 'fas fa-bars fa-2x'
+            }
           ></i>
         </span>
       </button>
