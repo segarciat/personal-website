@@ -1,5 +1,6 @@
 @import 'vars';
 @import 'utils';
+@import 'mixins';
 
 /* CSS reset */
 * {
@@ -56,12 +57,8 @@ li {
       flex-direction: row;
       align-items: center;
       padding: 1.25rem;
-      transform: translateX(0);
-      transition: transform ease-in-out 0.2s;
-
-      &.hide {
-        transform: translateX(70%);
-      }
+      // Slide CSSTransition
+      @include slide-main;
 
       .nav-toggler {
         height: 3rem;
@@ -83,8 +80,6 @@ li {
       flex-direction: column;
       background-color: $dark;
       box-shadow: 2px 0px 5px #222;
-      transform: translateX(-100%);
-      transition: transform ease-in-out 0.2s;
 
       .nav-brand a img {
         height: 3rem;
@@ -96,8 +91,6 @@ li {
 
       .nav-links a,
       .nav-brand a {
-        transform: translateX(-100%);
-        transition: transform ease-in-out 0.2s 0.2s;
         padding: 1rem 0 1rem 1.5rem;
 
         i {
@@ -115,20 +108,6 @@ li {
         bottom: 0;
         right: 0;
         padding: 1rem 0;
-        transform: scale(0);
-        transition: transform ease-in-out 0.3s 0.5s;
-      }
-
-      &.show {
-        transform: translateX(0);
-
-        .nav-links a,
-        .nav-brand a {
-          transform: translateX(0);
-        }
-        .social {
-          transform: scale(1);
-        }
       }
     }
   }
@@ -137,12 +116,41 @@ li {
 main#content {
   display: flex;
   justify-content: center;
-  transform: translateX(0);
-  transition: transform ease-in-out 0.2s;
-  opacity: 1;
-  &.hide {
-    transform: translateX(70%);
-    opacity: 0.8;
+  // Slide CSSTransition
+  @include slide-main;
+}
+
+.slide {
+  &-enter {
+    transform: translateX(-100%);
+    &-done {
+      transform: translateX(0);
+      transition: transform ease-in-out 200ms;
+    }
+  }
+  &-exit {
+    transform: translateX(0);
+    &-done {
+      transform: translateX(-100%);
+      transition: transform ease-in-out 200ms;
+    }
+  }
+}
+
+.scale {
+  &-enter {
+    transform: scale(0);
+    &-done {
+      transform: scale(1);
+      transition: transform ease-in-out 200ms 200ms;
+    }
+  }
+  &-exit {
+    transform: scale(1);
+    &-done {
+      transform: scale(0);
+      transition: transform ease-in-out 200ms 200ms;
+    }
   }
 }
 

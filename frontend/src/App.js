@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import Navbar from './components/Navbar';
 
 function App() {
-  const [isNavMenuShown, setIsMenuShown] = useState(false);
+  const [isNavMenuShown, setIsNavMenuShown] = useState(false);
 
   const handleNavTogglerClick = () => {
-    setIsMenuShown((menuWasShown) => !menuWasShown);
+    setIsNavMenuShown((menuWasShown) => !menuWasShown);
   };
   return (
     <React.Fragment>
@@ -14,11 +15,13 @@ function App() {
         onTogglerClick={handleNavTogglerClick}
         isNavMenuShown={isNavMenuShown}
       />
-      <main id="content" className={isNavMenuShown ? 'hide' : undefined}>
-        <div className="container">
-          <Outlet />
-        </div>
-      </main>
+      <CSSTransition in={isNavMenuShown} classNames="slide-main">
+        <main id="content">
+          <div className="container">
+            <Outlet />
+          </div>
+        </main>
+      </CSSTransition>
     </React.Fragment>
   );
 }

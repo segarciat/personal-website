@@ -1,0 +1,20 @@
+@mixin slide-main {
+  &.slide-main {
+    &-enter {
+      transform: translateX(0);
+
+      &-done {
+        transform: translateX(70%);
+        transition: transform ease-in-out 0.2s;
+      }
+    }
+
+    &-exit {
+      transform: translateX(70%);
+      &-done {
+        transform: translateX(0);
+        transition: transform ease-in-out 0.2s;
+      }
+    }
+  }
+}

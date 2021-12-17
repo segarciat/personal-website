@@ -2,7 +2,7 @@ import React from 'react';
 
 const NavHeader = ({ isNavMenuShown, onTogglerClick }) => {
   return (
-    <header className={isNavMenuShown ? 'hide' : undefined}>
+    <header>
       <button className="btn nav-toggler" onClick={onTogglerClick}>
         <span>
           <i
