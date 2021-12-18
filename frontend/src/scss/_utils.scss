@@ -10,21 +10,45 @@
   background: inherit;
   color: inherit;
   border: none;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
 }
 
 .btn {
   @extend %btn-shared;
 
   &-primary {
+    color: #fff;
     background: $primary;
   }
 
-  &-dark {
-    background: $dark;
+  &-secondary {
     color: #fff;
+    background: $secondary;
+  }
+
+  &-dark {
+    color: #fff;
+    background: $dark;
+  }
+
+  &-outline {
+    &-primary {
+      color: $primary;
+      border: 1px $primary solid;
+    }
+
+    &-secondary {
+      color: $secondary;
+      border: 1px $secondary solid;
+    }
   }
 
   &:hover {
     opacity: 0.5;
+  }
+
+  &-rounded {
+    border-radius: 2rem 2rem 2rem 2rem;
   }
 }

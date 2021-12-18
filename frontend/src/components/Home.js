@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import brandPhoto from '../images/brand-photo.jfif';
 
 const Home = () => {
@@ -9,33 +10,31 @@ const Home = () => {
     borderRadius: '50%',
     marginRight: '0.5rem',
   };
-  const [role, setRole] = useState({});
-
-  useEffect(() => {
-    const roles = [
-      { title: 'Programmer', icon: 'fas fa-terminal' },
-      { title: 'Mathematician', icon: 'fas fa-infinity' },
-      { title: 'Teacher', icon: 'fas fa-graduation-cap' },
-    ];
-    let index = 0;
-    setRole(roles[0]);
-    setInterval(() => {
-      index = (index + 1) % roles.length;
-      setRole(roles[index]);
-    }, 4000);
-  }, []);
   return (
     <React.Fragment>
       <section id="hero">
         <img style={brandPhotoStyle} src={brandPhoto} alt="Sergio" />
         <h1>Sergio E. Garcia T.</h1>
-        <strong className="role">
-          <i className={role.icon}></i> {role.title}
-        </strong>
-        <p>
-          I'm a self-taught programmer, primarily interested in web development
-          and game development.
+        <p class="short-summary">
+          I'm a self-taught programmer with an interest in web devopment, game
+          development, and all things code.
         </p>
+        {/* <p>
+          I am Sergio, a self-taught programmer with an interest in web
+          development and game development. I have a background in mathematics
+          from university, and several years of teaching and tutoring experience
+          in different capacities.
+        </p> */}
+        <div className="call-to-action">
+          <Link to="/about" className="btn btn-outline-secondary btn-rounded">
+            <i className="fas fa-arrow-circle-right"></i>
+            About Me
+          </Link>
+          <Link to="/portfolio" className="btn btn-primary btn-rounded">
+            <i className="fas fa-file-code"></i>
+            View Portfolio
+          </Link>
+        </div>
       </section>
     </React.Fragment>
   );

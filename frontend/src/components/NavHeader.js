@@ -5,13 +5,10 @@ const NavHeader = ({ isNavMenuShown, onTogglerClick }) => {
     <header>
       <button className="btn nav-toggler" onClick={onTogglerClick}>
         <span>
-          <i
-            className={
-              isNavMenuShown ? 'fas fa-times fa-2x' : 'fas fa-bars fa-2x'
-            }
-          ></i>
+          <i className={isNavMenuShown ? 'fas fa-times' : 'fas fa-bars'}></i>
         </span>
       </button>
+      <strong>Sergio E. Garcia T.</strong>
     </header>
   );
 };

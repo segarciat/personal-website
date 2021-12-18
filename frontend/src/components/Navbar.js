@@ -11,7 +11,7 @@ const Navbar = ({ isNavMenuShown, onTogglerClick }) => {
   const navItems = [
     { to: '/about', text: 'About', icon: 'fas fa-info-circle' },
     { to: '/blog', text: 'Blog', icon: 'fas fa-comment' },
-    { to: '/projects', text: 'Projects', icon: 'fas fa-code' },
+    { to: '/portfolio', text: 'Portfolio', icon: 'fas fa-code' },
     {
       to: '/contact',
       text: 'Contact',
