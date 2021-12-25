@@ -17,9 +17,7 @@ function App() {
       />
       <CSSTransition in={isNavMenuShown} classNames="slide-main">
         <main id="content">
-          <div className="container">
-            <Outlet />
-          </div>
+          <Outlet />
         </main>
       </CSSTransition>
     </React.Fragment>
