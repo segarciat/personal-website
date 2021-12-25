@@ -43,7 +43,8 @@ li {
   left: 0;
   z-index: 99;
   color: $light;
-  background-color: #222;
+  background-color: $dark;
+  opacity: 0.95;
 
   .container {
     // Vertically center all content inside links
@@ -93,8 +94,8 @@ li {
       width: 70vw;
       display: flex;
       flex-direction: column;
-      background-color: #222;
-      box-shadow: 2px 0px 5px #222;
+      background-color: $dark;
+      box-shadow: 2px 0px 5px $dark;
 
       .nav-links a,
       .nav-brand a {

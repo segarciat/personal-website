@@ -6,6 +6,7 @@ import SlideTransition from './SlideTransition';
 import ScaleTransition from './ScaleTransition';
 import NavHeader from './NavHeader';
 import brandPhoto from '../images/brand-photo.jfif';
+import faviconLogo from '../images/favicon-32x32.png';
 
 const Navbar = ({ isNavMenuShown, onTogglerClick }) => {
   const navItems = [
@@ -29,7 +30,7 @@ const Navbar = ({ isNavMenuShown, onTogglerClick }) => {
           <NavHeader
             onTogglerClick={onTogglerClick}
             isNavMenuShown={isNavMenuShown}
-            logo={brandPhoto}
+            logo={faviconLogo}
           />
         </CSSTransition>
 
