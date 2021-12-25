@@ -40,8 +40,9 @@
   color: #fff;
 
   .section-heading {
+    font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: $secondary;
+    color: $primary;
   }
 
   ul {
@@ -61,6 +62,9 @@
       a {
         display: inline-block;
         position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+
         .portfolio-image {
           position: relative;
           img {
@@ -71,6 +75,7 @@
             object-fit: cover;
             height: 300px;
             max-width: 100%;
+            overflow: hidden;
           }
 
           &:before {
@@ -82,7 +87,6 @@
             bottom: 0;
             z-index: 2;
             background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
           }
         }
 

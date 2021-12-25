@@ -29,6 +29,7 @@ const Navbar = ({ isNavMenuShown, onTogglerClick }) => {
           <NavHeader
             onTogglerClick={onTogglerClick}
             isNavMenuShown={isNavMenuShown}
+            logo={brandPhoto}
           />
         </CSSTransition>
 
