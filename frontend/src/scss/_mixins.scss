@@ -1,5 +1,5 @@
-@mixin slide-main {
-  &.slide-main {
+@mixin nav-toggle-slide {
+  &.nav-toggle-slide {
     &-enter {
       transform: translateX(0);
 

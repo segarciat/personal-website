@@ -26,7 +26,7 @@ const Navbar = ({ isNavMenuShown, onTogglerClick }) => {
   return (
     <nav className="navbar">
       <div className="container">
-        <CSSTransition in={isNavMenuShown} classNames="slide-main">
+        <CSSTransition in={isNavMenuShown} classNames="nav-toggle-slide">
           <NavHeader
             onTogglerClick={onTogglerClick}
             isNavMenuShown={isNavMenuShown}

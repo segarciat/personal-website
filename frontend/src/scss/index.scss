@@ -73,7 +73,7 @@ li {
       justify-content: space-between;
       padding: 0 0.75rem;
       // Slide CSSTransition
-      @include slide-main;
+      @include nav-toggle-slide;
 
       .nav-toggler {
         height: 3rem;
@@ -125,7 +125,28 @@ main#content {
   display: flex;
   flex-direction: column;
   // Slide CSSTransition
-  @include slide-main;
+  @include nav-toggle-slide;
+}
+
+.blur {
+  &-enter {
+    filter: blur(0);
+    -webkit-filter: blur(0);
+
+    &-done {
+      filter: blur(3px);
+      -webkit-filter: blur(3px);
+    }
+  }
+
+  &-exit {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    &-done {
+      filter: blur(0);
+      -webkit-filter: blur(0);
+    }
+  }
 }
 
 .slide {
@@ -158,6 +179,23 @@ main#content {
     &-done {
       transform: scale(0);
       transition: transform ease-in-out 200ms 200ms;
+    }
+  }
+}
+
+.slide-vertical {
+  &-enter {
+    transform: translateY(-105%);
+    &-done {
+      transform: translateY(0);
+      transition: transform ease-in-out 200ms;
+    }
+  }
+  &-exit {
+    transform: translateY(0);
+    &-done {
+      transform: translateY(-105%);
+      transition: transform ease-in-out 200ms;
     }
   }
 }
