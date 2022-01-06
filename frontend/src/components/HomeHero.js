@@ -3,17 +3,10 @@ import { Link } from 'react-router-dom';
 import brandPhoto from '../images/brand-photo.jfif';
 
 const HomeHero = () => {
-  const brandPhotoStyle = {
-    height: '10rem',
-    width: '10rem',
-    border: 'none',
-    borderRadius: '50%',
-    marginRight: '0.5rem',
-  };
   return (
     <section id="home-hero">
       <div className="container">
-        <img style={brandPhotoStyle} src={brandPhoto} alt="Sergio" />
+        <img className="hero-photo" src={brandPhoto} alt="Sergio" />
         <h1>Sergio E. Garcia T.</h1>
         <p class="short-summary">
           I'm a self-taught programmer with an interest in web devopment, game

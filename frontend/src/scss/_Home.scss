@@ -11,6 +11,14 @@
   padding: 1rem;
   font-family: 'Ubuntu';
 
+  .hero-photo {
+    height: 10rem;
+    width: 10rem;
+    border: 'none';
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
   h1 {
     margin: 1rem 0;
   }
@@ -24,8 +32,11 @@
     display: flex;
     justify-content: space-around;
 
-    i {
-      margin-right: 0.5rem;
+    a {
+      font-size: 0.8rem;
+      i {
+        margin-right: 0.5rem;
+      }
     }
   }
 }
@@ -81,21 +92,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   height: 100vh;
   padding: 1rem;
 
+  .container > p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
   ul {
+    // Number of portfolio portfolio projects.
+    --n: 2;
+    --i: 1;
     width: 100%;
+    width: calc(var(--n) * 100%);
     display: flex;
     flex-direction: row;
     align-items: center;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     margin: 2rem 0;
+    transform: translate(calc(var(--i, 0) / var(--n) * -100%));
 
     li.portfolio-item {
-      min-width: 85%;
+      // min-width: 85%;
+      width: calc(100% / var(--n));
       margin-right: 1rem;
       border-radius: 10px;
 

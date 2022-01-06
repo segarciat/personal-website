@@ -15,7 +15,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('changed');
     const handleWindowScroll = () => {
       setScrollY((oldScrollY) => {
         setIsNavbarShown(window.scrollY < oldScrollY);
